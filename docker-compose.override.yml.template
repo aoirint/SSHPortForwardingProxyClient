@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+    ssh-client:
+        environment:
+          SERVER_USERNAME: myuser
+          SERVER_HOSTNAME: localhost
+          SERVER_PORT: 12322
+          PRIVATE_KEY_PATH: /private_keys/myuser
+          REMOTE_FORWARDING_PORTS: "0.0.0.0:32122:127.0.0.1:22, 0.0.0.0:32180:127.0.0.1:80"
