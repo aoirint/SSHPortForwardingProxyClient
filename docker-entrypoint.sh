@@ -30,6 +30,8 @@ ssh -v -N "${SERVER_HOSTNAME}" \
     -l "${SERVER_USERNAME}" \
     -p "${SERVER_PORT}" \
     -i "${PRIVATE_KEY_PATH}" \
+    -o ServerAliveInterval=30 \
+    -o TCPKeepAlive=yes \
     -o ExitOnForwardFailure=yes \
     -o StrictHostKeyChecking=no \
     -o UserKnownHostsFile=/known_hosts/known_hosts ${LOCAL_FORWARDING_OPTIONS} ${REMOTE_FORWARDING_OPTIONS}
